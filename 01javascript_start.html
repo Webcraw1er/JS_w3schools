@@ -1,0 +1,53 @@
+<!Doctype html>
+<html>
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <style>
+    </style>
+
+    <script>
+        function myFunction() {
+            document.getElementById("test").innerHTML= "Paragraph changed again.";
+        }
+    </script>
+</head>
+<body>
+    <h2>What can JS do?</h2>
+    <p id="test">Javascript can change HTML content.</p>
+    <p id="hidden" style="display: none; font-size: 50px; font-weight: bolder">Tada</p>
+    <input type="button" value="CLick me!" onclick="document.getElementById('test').innerHTML= 'Hello JS!'">
+    <input type="button" value="CLick again!" onclick="document.getElementById('test').style.fontSize= '50px'">
+    <input type="button" value="Once more" onclick="document.getElementById('test').style.display= 'none'">
+    <input type="button" value="click to see hidden message" onclick="document.getElementById('hidden').style.display= 'block'">
+    <input type="button" value="button1" id="button1">
+    <input type="button" value="click to change button1" onclick="document.getElementById('button1').value= 'button2'">
+    <p id="test2"></p>
+    <script>
+        document.getElementById("test2").innerHTML= "One plain output";
+    </script>
+    <button type="button" onclick="myFunction()">Click to ch 1st sentence</button>
+</body>
+</html>
+
+<!-- 
+1. Javascript can change the value and the style of the HTML or the CSS.
+    for ex) the above example shows that the text is changed, hidden, and then displayed as a block(appeared).
+
+2. besides these cool stuff, you can just instantly print it with innerHTML.
+
+3. JS function is a block of js code, that can be executed when "called" for.
+    For ex) it can be called when an event occurs.
+    JS functions can be placed anywhere in the HTML code.
+
+4. every elements can be accessed or altered via 
+        document.getElementById('randomId').randomAttribute= 'randomNewValue'
+
+5. so "onclick=''" is a function evoked when the element is clicked.
+    SO if you write
+    <button type="button" onclick="myFunction()">Try It</button>
+    myFunction() is evoked when the button is clicked.
+
+6. <script>s are best placed at the bottoms of the "body" element
+    because it takes some time for the decoder to read the <scripts>, which 
+    slows down the performance.
