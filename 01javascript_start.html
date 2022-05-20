@@ -13,6 +13,7 @@
     </script>
 </head>
 <body>
+
     <h2>What can JS do?</h2>
     <p id="test">Javascript can change HTML content.</p>
     <p id="hidden" style="display: none; font-size: 50px; font-weight: bolder">Tada</p>
@@ -27,6 +28,15 @@
         document.getElementById("test2").innerHTML= "One plain output";
     </script>
     <button type="button" onclick="myFunction()">Click to ch 1st sentence</button>
+
+    <!-- external JS -->
+    <h2 id="demo">this is the third test h2</h2>
+
+    <button type="button" onclick="myfunc2()">click again and again</button>
+    <input type="button" onclick="myFunction()" value="External url">
+
+    <script src="01javascript_start.js"></script>
+    <script src="https://www.w3schools.com/js/myScript.js"></script>
 </body>
 </html>
 
@@ -50,4 +60,14 @@
 
 6. <script>s are best placed at the bottoms of the "body" element
     because it takes some time for the decoder to read the <scripts>, which 
-    slows down the performance.
+    slows down the performance of the display.
+
+    Technically it can come in any place; body, head, anywhere.
+
+7. using external scripts advantages:
+        seperates HTML code
+        makes it easier to read and maintain
+        Cached scripts speed up page loads.
+ 
+    
+
