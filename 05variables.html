@@ -1,0 +1,58 @@
+<!Doctype html>
+<html>
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <script>
+        const price1= 2000;
+        //price1= 100;   <-- error!!!
+        document.write(price1);
+        var car=" volvo";
+        var car;   
+        let x= 4+3+2;
+        let y= "volvo" + " " + "is shit";
+        let z= "5" + 1 + 2;    
+        document.write("\n", x);
+        document.write("\n", y);
+        document.write("\n", z);
+    </script>
+</body>
+</html>
+
+<!-- 
+1. var 은 ㅡ틀ㅡ 버전. 1996년 이전의 os에서 돌아가려면 var써야 한다.
+     그 외에 var 과 let 차이는 없음.
+    
+2. const is unchangeable.
+    Let and var are changeable.
+
+3. all JS variables must be identified with unique names.
+    can contain and start with $ and _, but cannot start with numbers.
+    are case sensitive.
+
+4. the "=" operator is an "assignment" operator, not an "equal to" operator. (equal to operator : ==)
+    in algebra, 
+        x= x+5;
+    desn't make any sense.
+    however in Js, it does.
+        x= x+5;
+    will assign x+5 to x, which eventually leads to an increment of "x" by 5.
+
+5. Declaring a variable: 
+        you can declare many variables at once.
+            ex) let carname= "volvo",owner= 'Justin', price= 200;
+
+6. if a variable is declared withut a value, its value will be "undefined"
+    if it is redeclared like 
+        let car ="volvo";
+        let car
+    it will inherit the previous value.
+        actually no because you cannot redeclare let and const, 
+        ONLY VAR CAN BE REDECLARED.
+
+7. + operator concatenates strings.

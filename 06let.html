@@ -1,0 +1,79 @@
+<!Doctype html>
+<html>
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <script>
+        var x= 10;
+        { var x= 2; }
+        document.write(x);
+
+        let y=20;
+        { let y= 1; }
+        document.write("<br>"+ y);
+
+        carname= "volvo";
+        document.write("<br>" +carname);
+        var carname;
+    </script>
+</body>
+</html>
+
+<!--
+1. variables declared with "let" keyword cannot be redeclared.
+    let x= 56;
+    let x= "John Doe"
+    raises an error.
+
+2. variables defined with let must be declared before use.
+
+3. let has a block scope.
+    variables declared inside the { } block cannoy be accessed from outside the block.
+
+    { let x= 10; }
+    let x= "John Doe";
+    document.write(x);
+        -> this code runs good.
+    
+    { let x= 10; }
+    document.write(x);
+        -> raises error: x not defined.
+
+    HOWEVER, VAR does not have a block scope.
+    it can also be redeclared, so the redeclaration can appear on anywhere of the code.
+
+    { var x= 10; }
+    let x= "John Doe";
+    document.write(x);
+        -> runs good.
+
+    { var x= 10; }
+    document.write(x);
+        -> runs good.
+
+4. redeclaring:
+    just remember that if using "let", those two are totally different variables.
+    when using "var", those two are one; because "var" is not block level.
+
+    so you can go with var anywhere, and let if you do this:
+    let x=10;
+    {let x= 2; } 
+    {let x= 5; }
+
+    this is totally fine.
+
+5. Hoisting means that 
+        Former to the execution, the program seperates the declaration and initialization,
+        and only the declarations goes to the top of the code.
+
+        AS A RESULT, if you did declare the variable somewhere in the code, you are free to 
+                    use it before declaring it first.
+
+        Let is also hoisted, but not initialized, 
+            -> which means that using it will raise an reference error.
+

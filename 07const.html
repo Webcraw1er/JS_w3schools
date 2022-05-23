@@ -1,0 +1,44 @@
+ <!--
+const cannot be redeclared.
+      cannot be reassigned.
+      have block scope.
+
+-->
+
+<!Doctype html>
+<html>
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <script>
+    
+    </script>
+</body>
+</html>
+
+<!--
+1. const cannot be reassigned.
+    const PI= 3.1415;
+    PI= 3.14;           <- this raises an error
+    PI= PI+10;          <- this raises an error/
+
+2. const must be assigned a value when it is declared. 
+    const PI;
+    PI= 3.14;       <-- error
+
+3. const is a little misleading.
+    it DOES NOT define a constant value. 
+    it DEFINES A constant reference to a value.
+
+    So you can:
+        change the elements of a constant array
+        change the properties of constant object.
+    BUT YOU CANNOT:
+        REASSIGN A CONSTANT VALUE.
+        REASSIGN A CONSTANT ARRAY.
+        REASSIGN A CONSTANT OBJECT.
