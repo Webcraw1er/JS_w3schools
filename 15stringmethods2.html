@@ -1,0 +1,101 @@
+<!Doctype html>
+<html>
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <script>
+        let text1= "Hello";
+        let text2= " Justin";
+        let text3= "Justin";
+        let text4= " you're doomed.";
+        let text5= text1.concat(text2);
+        document.write(text5);
+        document.write("<br>");
+        document.write(text1.concat(" ", text3, "...", text4)); 
+        document.write("<br>");
+        document.write("Hello".concat(" ", "Justin."));
+
+        let text6= "     Hello world!   ";
+        document.write("<br><br>", "first it was: ", text6.length, " chars long, ", "<br>", "now its: ",
+        text6.trim().length, " chars long.");
+
+        document.write("<br><br>");
+        let text7= "1582";
+        let padded= text7.padStart(8,"0");
+        document.write(padded);
+
+        document.write("<br><br>");
+        let num8= 1582;
+        let text8= num8.toString();
+        let padded2= text8.padEnd(8, "9");
+        document.write(padded2);
+
+        document.write("<br><br>");
+        text9= "Justin";
+        document.write(text9.charAt(2));
+
+        document.write("<br>");
+        document.write(text9.charCodeAt(3));
+
+        document.write("<br>");
+        document.write(text9[4]);
+
+        document.write("<br><br>");
+        let text10= "by the people, for the people, and of the people.";
+        let arr10= text10.split(",");
+        document.write(arr10);
+        document.write("<br>");
+        document.write(arr10[1]);
+
+        /* spliting the whole sentence and joining it again  */
+        let text11="I have a dream of which all crooks die in pain.";
+        let split11= text11.split("");
+
+        let text12="";
+        for(let i=0; i< text11.length; i++){
+            text12+= "<br>"+ split11[i];
+        }
+        document.write(text12);
+
+    </script>
+</body>
+</html>
+
+<!--
+1. All string methods return a new string. they dont modify the original string.
+    SO strings are immutable. can't be changed, only replaced.
+
+2. trim() only deletes the white spaces of both sides.
+
+3. padStart(num1, str1);
+    pads the start of the string with str1, fills it until the whole string length reaches num1.
+
+4. there are 3ways of extracting string characters.
+    1. charAt(position)
+        output is the character in the index of the "position" parameter.
+    2. charCodeAt(position)
+        output is the unicode of the character in the index of the "position" parameter.
+    3. Property access[ ]
+        ex) let char=text9[2];
+
+5. convert string into array
+    .split("str") method 
+        will split the string as well as converting it to an array.
+        
+        eventually ending up having a 2nd dimension array,
+            ex) if the original string is 
+                    let str1= "by the people, for the people, and of the people";
+                and you 
+                    let str2= str1.split(",");
+                then str2 has 3 array elements as strings., 
+                array[0] as "by the people"
+                array[1] as "for the people"
+                array[2] as "and of the people"
+
+    spliting a text with "" will divide the whole text into an array of single characters.
+-->

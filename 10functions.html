@@ -1,0 +1,46 @@
+<!Doctype html>
+<html>
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <p id="test1"></p>
+    <p id="test2"></p>
+    <script>
+
+        /* 3. */
+        function myFunction(fh){
+            return (5/9)*(fh-32);
+            let x;
+        }
+        document.getElementById("test1").innerHTML= myFunction;
+        let x= myFunction(77);
+        let text1= "the temperature is " + x+ "Celsius";
+        document.getElementById("test2").innerHTML= text1;
+
+    </script>
+</body>
+</html>
+
+<!--
+1. the syntax of a function: 
+    function functionName() { function code } 
+
+    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    function PARAMETERS are listed inside the parethesis in the function definition.
+    function ARGUMENTS are the VALUES received by the function when it is invoked(called).
+
+
+2. Even if var is NOT block level, when it is declared inside a FUNCTION, 
+    it CANNOT be accessed from outside the function.
+        ex)
+            function myfunction(){ var x=2; }
+            document.write(x); 
+        
+            raises an error saying that x is not defiened.
+
+3. accessing a function without () parenthesis will return the function object instead of result.

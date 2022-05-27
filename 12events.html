@@ -1,0 +1,56 @@
+<!Doctype html>
+<html>
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <style>
+        
+    </style>
+</head>
+<body>
+    
+    <input type="button" value="what time is it?" onclick="document.getElementById('test1').innerHTML=Date()">
+    <p id= "test1"></p>
+    <button onclick="this.innerHTML= Date()">again, what time?</button>
+    <input type="button" id="input1" value="again, what time?" onclick="this.value=Date()">
+</body>
+</html>
+
+<!--
+1. html events are things that happen to html elements.
+    Js will react to these events.
+
+2. Events can be things the browser does, or a user does.
+    ex) html page has finished loading
+        html inout field is changed.
+        html button is clicked.
+
+    HTML ALLOWS EVENT HANDLER ATTRIBUTES, WITH "JAVASCRIPT CODE" TO BE ADDED TO HTML ELEMENTS.
+
+3. YOU SEE, the <button> element has a content as its value.
+            however the <input> has a "value" attribute.
+            so the "onclick"  must change the innerHTML(contnent) of the former, 
+            but "value" of the latter.   
+
+4. HTMl events:
+    onchange        an html element has been changed.
+    onclick         the user clicks an element.
+    onmouseover     user moves mouse over an html element.
+    onmouseout      user moves mouse away from element.
+    onkeydown       user pushes a keyboard key.
+    onload          browser has finished loading a page.
+
+        according to the events, what html does varies.
+    EVENT HANDLERS   can be used to handle and verify user input, user actions, and brower actions.
+        ex) things that should be done evry tiem a page loads.
+            things that should be done when page closes.
+            action that should be performed when a button is clicked.
+            contents that should be verified when a user inputs data.
+
+    many different methods can be used to let JAVASCIPT work with events.
+        ex) HTML EVENT ATTRIBUTES can execute js code directly.
+                                  can call JS functions.
+            you can assign your own event handler functions to HTML elements.
+            you can prevent events from eing sent or being handled.
+                                
+-->

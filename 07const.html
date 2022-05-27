@@ -16,8 +16,26 @@ const cannot be redeclared.
 </head>
 <body>
     <script>
-    
+        /* 3. */
+        const cars= ["saab", "Volvo", "BNW"];
+        cars[0]= "Sonata";
+        cars.push("Audi");
+        document.write(cars);
     </script>
+    <p id="carprint"></p>
+    <script>
+        /* 4. */
+        const car = {type: "Racing", model: "T500", year: 1996}
+        car.year= 1997;
+        car.speed= "196miles/hour";
+        document.getElementById("carprint").innerHTML= "The car is : "+ car.model + "<br>"+ 
+        "car speed is " + car.speed;
+
+        /* 5. */
+        const x= 10;
+        {const x= 2; }
+        document.write("<br>"+ x);
+</script>
 </body>
 </html>
 
@@ -40,5 +58,12 @@ const cannot be redeclared.
         change the properties of constant object.
     BUT YOU CANNOT:
         REASSIGN A CONSTANT VALUE.
-        REASSIGN A CONSTANT ARRAY.
+        REASSIGN A CONSTANT ARRAY. 
+            ex) cars= ["audi", "sonata"];
+                cars= ["bentz", "audi"];  <--- this will raise an error. 
         REASSIGN A CONSTANT OBJECT.
+
+4. const is block level.
+    `   same as others. shares the mostly same characteristics with "let".
+
+5. const is also hoisted to the top., but also not initialized. just like "let".

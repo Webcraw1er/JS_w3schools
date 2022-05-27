@@ -1,0 +1,56 @@
+<!Doctype html>
+<html>
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <script>
+        const cars= ["dac", "volvo", "Bmw"];
+        const person= {firstName: "John", lastName: "Doe", age: 50, eyecolor: "Red"};
+        x= typeof 9
+        y= typeof ""
+        document.write(x)
+        document.write("<br>" +y)
+        let z;
+        document.write("<br>" +typeof z)
+        document.write("<br>" +z)
+    </script>
+</body>
+</html>
+
+<!--
+1. JS evaluates expressions from left to right.
+    so the results can vary; 
+        let x= 16+ "volvo" + 4  -> produces "16volvo4"
+        let x= 16+ 4+ "volvo"   -> produces "20volvo"
+        let x= "volvo" + 16+ 4  -> produces "volvo164"
+
+2. you can use both single and double quotes as long as it does not match(be identical) to the one
+    surrounding it.
+
+3. in Js there is only one number type.
+    However extremely small or big ones can be written in scientific notation.
+        ex) let y= 123e5;  //12300000
+            let z= 123e-5; // 0.00123
+    
+4. boolean: only has two values; true or false
+    let x= 4;
+    let y= 4;
+    let z= 6;
+    (x== y)             <-- returns true
+    (x> z)              <-- returns false
+
+5. JS arrays
+    written in square braces. 
+    seperated with commas.
+
+    const cars= ["dac", "volvo", "Bmw"];
+\
+6. if declared without a value, it has a value of "undefined", and the type of undefined.
+    당연하지.JS에는 자료형 선언을 하지 않기에 배정된 자료에 따라 dynamic하게 자료형이 정해지는데,
+    이 자료가 주어지지 않았으니까.
+-->

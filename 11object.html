@@ -1,0 +1,59 @@
+<!Doctype html>
+<html>
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <p id="test1"></p> 
+    <p id="test2"></p> 
+    <p id="test3"></p> 
+    <script>
+        const name= {
+            firstname: "John",
+            lastname: "Legend",
+            age: 19,
+            fullname: function() { return this.firstname + " " + this["lastname"]; },
+        }
+        document.getElementById("test1").innerHTML= name.firstname + " " + name["lastname"];
+        document.getElementById("test2").innerHTML= name.fullname();
+        document.getElementById("test3").innerHTML= name.fullname;
+
+        
+    </script>
+</body>
+</html>
+
+<!-- 
+1. in real life a car is an object, which has a property that varies from car to car, and
+    has methods like start, brake, and stop.
+
+2. an object is made to contain many values in one variable.
+    the values are written as name: value pairs.
+
+    a method is a function stored as a property.
+            is  an action that can be performed on objects.
+            is stored in properties as function definitions
+
+3. accessing object properties
+    in two ways: 
+        objectName.propertyName
+    or
+        objectName["propertyName"]
+
+4. ABOUT <THIS>
+    1) in an object method, this refers to the object.
+    2) Alone, this refers to the global object.
+    3) In a function, this refers to the global object.
+    4) In an event, this refers to the element that received the event.
+    5) methods like call(), apply(), and bind{() can refer this to any object.
+
+        this is not a variable, its a keyword. you cannot change the value of this.
+        In a function definition, this refers to the "owner" of the function.
+        In the example above, this is the "name object" that "owns" the fullName function.
+        In other words, this.firstName means the firstName property of "this object".
+
+-->

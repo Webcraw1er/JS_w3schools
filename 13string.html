@@ -1,0 +1,51 @@
+<!Doctype html>
+<html>
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <p id="test1"></p> 
+    <p id="test2"></p> 
+    <p id="test3"></p> 
+    <p id="test4"></p> 
+    <script>
+        document.getElementById("test1").innerHTML= "this is \
+         how a \"\\\", \"backslash\" is used.";
+         let x= "John";
+        let y= new String("John");
+        let z= new String("John");
+        document.getElementById("test2").innerHTML= (x==y);     
+        document.getElementById("test3").innerHTML= (x===y);    
+        document.getElementById("test4").innerHTML= (y==z);
+    </script>
+</body>
+</html>
+
+<!--
+1. a string: zero or more characters written in quotes.
+
+2. there are several built-in properties, 
+    just like ___init__() in python, that is declared automatically when a 
+    variable or object is declared.
+
+    ex) let text= "abcdefg";
+        let length= text.length;
+
+3. you can escape chars with \.
+    also if you need to break a string into two lines in the middle of it, 
+    use one backslash in th end of the first line, just like "-" is used in paper books.
+
+4. you can also create a string as object, woth the "new" keyword, but it is not recommended.
+    ex) let x= "John";
+        let y= new String("John");
+        let z= new String("John");
+        document.getElementById("test1").innerHTML= (x==y);     -> returns true.
+        document.getElementById("test1").innerHTML= (x===y);    -> returns false.
+        document.getElementById("test1").innerHTML= (y==z);     -> returns false; JS cannot
+                                                                    compare objects.
+
+-->

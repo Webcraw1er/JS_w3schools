@@ -1,0 +1,68 @@
+<!Doctype html>
+<html>
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <script>
+        var x= "what a lovely day";
+        x += " to be in";
+        document.write(x);
+        var text1 = "John";
+        var text2 = "Doe";
+        var text3 = text1+ " " + text2;
+        document.write("<br>"+ "dont you think " + text3+ "?");
+    </script>
+    <p id="test4"></p>
+    <script>
+        var x= 3;
+        var y= 10+ x* 20;
+        document.getElementById("test4").innerHTML= y;
+
+    </script>
+</body>
+</html>
+
+
+<!--
+1. operators I should know.
+    operators       description
+    **              exponential
+    %               modulus
+    ++              increment
+    --              decrement
+
+    x+= y           x= x+ y
+    x**= y          x= x** y
+    x%= y           x= x% y
+
+    "+" also concatenates strings.
+    x= "what a nice"
+    x+= "day to be on"
+
+    however if you add a number to a string, the result will be a string!
+
+    ==              equal to
+    ===             equal value AND equal type
+    !=              not equal
+    !==             not equal value OR not equal type
+    <
+    >
+    <=
+    >=
+    ?               ternary operator
+    &&              AND
+    ||              OR
+    !               NOT
+    >>>=            right shift
+    
+2. JS shares the same precedance as the modern math. 
+    multiplication and division is done first, the addition and subtraction later.
+
+    though the paranthesis changes the precedance. 
+        this is also the case in c
+-->

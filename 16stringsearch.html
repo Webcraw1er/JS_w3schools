@@ -1,0 +1,53 @@
+<!Doctype html>
+<html>
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <p id="test1">text shown here</p>
+    <button type="button" onclick="document.getElementById('test1').innerHTML=
+    'first: '+ str1.indexOf('locate')+ '<br>last: '+ str1.lastIndexOf('locate')">click!</button>
+    <script>
+        let str1= "Please locate where 'locate' occurs!";
+        let str2="the rain in SPAIN stays mainly in the plain.";
+        document.write("<br><br>", str2.match(/ain/ig));
+        if(str2.includes("rain")){
+            document.write("<br>", "the location of 'rain' is: ", str2.indexOf('rain'));
+        }
+        document.write("<br>str2 includes 'ain'?: ", str2.includes("ain", 11));
+        document.write("<br>does str2 start with 'the rain'?: ", str2.startsWith("the ra"));
+        document.write("<br>does str2, index[5] start with 'ain in'?: ", str2.startsWith("ain in", 5));
+        document.write("<br>does str2 end with 'the plain.'?: ", str2.endsWith("the plain."));
+        document.write("<br>does the first 17 chars of str2 end with 'SPAIN'?: ",
+         str2.endsWith("SPAIN", 17));
+
+    </script>
+</body>
+</html>
+
+<!--
+
+1. methods for searching strings.
+    1) indexOf("str")
+        first occurance of the str.
+    2) lastIndexOf("str")
+        final occurance of the str
+    3) startsWith("str")
+    4) endsWith("str")
+
+    1) and 2) both accept starting positions of the search as their second parameter.
+        if none present, both returns "-1"
+    
+    indexOf() is similar to search(), but search does not accept the second parameter,
+    and indexOf() does not accept powerful search values such as RegExp.
+
+2. match()
+    searches for a match against RegExp, then return the matches as an array object.
+
+3. startsWith() 에 두번째 파라미터가 들어오면, 그건 몇번째 [[[index]]]부터 시작하는지 밝히는 것.
+    반면 endsWith() 에 두번째 파라미터가 온다면, 그건 체크할 스트링의 길이를 밝히는 것.
+    

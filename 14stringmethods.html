@@ -1,0 +1,71 @@
+<!Doctype html>
+<html>
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <p id="test1"></p> 
+    <p id="test2"></p> 
+    <p id="test3"></p> 
+    <p id="test4"></p> 
+    <p id="test5"></p> 
+    <p id="test6"></p> 
+    <p id="test7"></p> 
+    <script>
+        let x= " I, have a dream.";
+        document.getElementById("test1").innerHTML= x;
+        document.getElementById("test2").innerHTML= x.length;
+        document.getElementById("test3").innerHTML= x.slice(4, 9);
+        document.getElementById("test4").innerHTML= x.substr(4, 4);
+        
+        /* 3. */
+        let text= "Justin is not a chad";
+        document.getElementById("test5").innerHTML= text.replace("Justin", "Mike");
+        document.getElementById("test6").innerHTML= text.replace(/jUsTiN/i, "Ken");
+        let z= "What the hell have you been doing for hell's sake man.";
+        document.getElementById("test7").innerHTML= z.replace(/hell/g, "fuck");
+    </script>
+    <p id="test8">Hello Justin.</p>
+    <input type="button" value="click to change" onclick=
+        "document.getElementById('test8').innerHTML= text2.toUpperCase()"> 
+    <p id="test9">Hello Justin.</p> 
+    <input type="button" value="click to change" onclick=
+        "document.getElementById('test9').innerHTML= text2.toLowerCase()">
+    <p id="test10"></p> 
+    <p id="test11"></p> 
+    <p id="test12"></p> 
+    <script>
+        var text2="Hello Justin";
+    </script>
+</body>
+</html>
+
+<!--
+1. IN JS, ONLY OBJECTS HAVE METHODS AND PROPERTIES, 
+    and you know that primitive values like strings are not objects.
+
+    however js treats them as objects, so thayt they have methods and properties available.
+
+2. how to slice strings: three ways
+    1) slice(start, end);
+    2) substring(start, end);
+    3) substr(start, length);
+
+    JS counts the first charecter as index [0], and the end charecter is not applied to the sliced string.
+    if you omit the second parameter, 첫번째 파라미터 이후의 스트링을 리턴한다. 
+    if the parameters are negative, counts from the last character.
+
+3. replace strings
+    replace() method replaces the exact piece of string given to a given string.
+        1) it must be an exact match, and is case sensitive.
+        2) It does not change te original string it is called on.
+        3) It returns a new string.
+        4) replaces only the first match.
+
+    HOWEVER TO REPLACE CASE INSENSITVE, USE THE FLAG "/i"
+    If you want to replace all matches, use /g flag.
+        -> these are the regular expressions, in short reg ex.
