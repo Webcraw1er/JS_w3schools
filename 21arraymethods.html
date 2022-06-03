@@ -1,0 +1,114 @@
+<!Doctype html>
+<html>
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div id="h11"></div>
+    <script>
+        let crlf="<br>";
+        let arr1=["sam", "John", "Jane", "Joshua"];
+        document.getElementById("h11").innerHTML= arr1.toString();
+        document.write(arr1.join(" / "));
+        let popped=arr1.pop();
+        document.write(crlf, "first one to get popped: ", popped, crlf, "second to get popped: ", arr1.pop());  /* <------element that is kicked out */
+        document.write(crlf, arr1);        /* result of pop()       */
+        let lengthAfter= arr1.push("Justin");
+        document.write(crlf, "the length now: ", lengthAfter, crlf, "the main array now: ", arr1);
+        var arr3=["sam", "John", "Jane", "Joshua"];
+        document.write("arr2 is as follows: ", arr3);
+        document.write(crlf, arr3.shift(), " is omitted from arr3, and the array is now: ", arr3);
+        document.write(crlf, "arr3 is unshifted with \"Tim\" and now is: ", arr3.unshift("Tim"),
+         " elements long, and<br> is now: ", arr3);
+    
+        /* 5. */
+        const name1= ["Jully", "Lin"];
+        const name2= ["Ciline", "Lily"];
+        const name3= ["Beth", "adriene"]; 
+        let name4= name1.concat(name2, name3);
+        name4= name4.concat("Penny");
+        document.write(crlf, crlf, name4, crlf);
+
+        /*  6. */
+        var arr= name4;
+        document.write(crlf, "before practicing slice ad splice, the original arr is: ", crlf, 
+        arr.join(" / "));
+        var removed= arr.splice(2, 2, "Jane", "Seth");
+        document.write(crlf, "after arr.splice(2, 2, \"Jane\", \"Seth\")", crlf, arr,
+        crlf, "removed elements: ", removed, crlf);
+        var newarr= arr.slice(2, 5);
+        document.write(crlf, "sliced with \"arr.slice(2, 5);\" is a ", crlf, newarr.join(" , "));
+
+
+</script>
+</body>
+</html>
+
+
+<!--
+1. .toString() method
+    converts an array to a string of array values.
+
+    .join(" seperator ") method 
+        does almost the same with toString, but one difference is that the join method
+        specifies the seperator.
+
+2. .pop() method
+    pops out the last element and then returns its value.
+
+    .push() method
+    adds an element at the end of an array and reeturns the array's length.
+
+3. .shift() method
+        is equivalent to pop(), but works on the first element instead of the last.
+        removes the first elemnet and moves the rest to a lower index.
+    .unshift() method
+        adds am element at the beginnning and unshifts older materials.
+        it returns a  new array length.
+
+4. deleting an element:
+    you can use the delete keyword,
+        ex) delete arr1[2]
+    but you leave out "undefined" hols in the array.
+
+    use shift() or pop() instead.
+    
+5. .concat() method creates a new array by merging existing arrays.
+        it always creates and returns a new array.
+        can also take strings as arguments.
+    
+        YOU MUST RETURN THE ARRAY TO SOMETHING because it needs address
+        to store the newly created array.
+            for ex), if you 
+                        name4.concat("celly");
+                    the name is not stored.
+                    but if you 
+                        name4= name4.concat("celly");
+                    it is stored into "name4 array".
+                    
+6.  slicing() and splicing()
+
+        splice() adds new items to an array.
+            ex) fruit.splice(2, 1, "lemon", "Mango");
+                first parameter "2" defines the position where new elements should be added in.
+                second parameter "1" defines how many elements should be removed.
+                the rest of the parameters indicates the elements pushed into the array.
+                the return values are the elements delleted from the array.
+                if you use it cleverly with no elements to add, you can delete items with mo "spaces."
+                    ex) arr.splice(2, 1);  -> this erases the third element of "arr" array.
+        
+        slice() slices out a piece of an array. 
+            it returns a "sliced" array
+            ex) const newarr= arr.slice(2);  -> will slice the "arr" starting from index 2, and
+                                                save the new array in newarr.
+            while splice() manipulates the original array and could erase elements, slice() never 
+            touches the original and only ends up returning the new sliced array.
+            ex) const newarr2= arr.slice(2,5) -> will slice the array starting from index 2, up
+            to (but not including) index 5.                        
+
+7. all JS objects have a toString() method.
+-->

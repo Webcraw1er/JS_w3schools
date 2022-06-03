@@ -1,0 +1,54 @@
+<!Doctype html>
+<html>
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <script>
+        let crlf="<br>"
+        const fruits= ["Banana", "Orange", "Apple", "apple", "Mango"]
+        document.write(fruits.sort());
+        document.write(crlf, fruits.reverse());
+
+        /* 2. */
+        const points= [40, 100, 1, 5, 25, 10];
+        document.write(crlf, crlf, "the original array: ", points);
+        points.sort(function(a, b){return a-b});
+        document.write(crlf, "sorted from low   : ", points, crlf, "highest value: ", points[points.length-1], 
+        crlf, "lowest value: ", points[0], crlf);  
+ 
+
+        document.write(crlf, "sorted from high  \t: ", points.sort(function(a, b){return b-a}));
+
+        points.sort(function(a, b){return 0.5- Math.random()});
+        document.write(crlf, "sorted random     \t\t: ", points);
+
+        document.write(crlf, Math.random());
+        document.write(crlf, Math.random());
+        document.write(crlf, Math.random());
+</script>
+</body>
+</html>
+
+<!--
+1. sort() is case sensitive.
+
+2. sort() 매서드는 문자열 형식으로 요소들의 선후관계를 정의하기 때문에, 10보다 2가 더 크다고 나온다.
+    이걸 고치기 위해서는 compare function 을 사용. 이 compare function 을 sort method의 인자로 준다.
+
+    compare function:       the purpose is to define an alternative sort order.
+                            the function must return a negative, zero, or positive values.
+
+        how does it work?
+            ex) function(a, b){return a-b} 
+            1. the compare function compares all the values in the array, two values at a time.
+            2. if (a-b) is negative, which means A IS SAMLLER, a comes before b.
+                if      is positive, which means A IS BIGGER,  a comes after b.
+
+        Math.random() creates a random float between 0 and 1.
+
+-->

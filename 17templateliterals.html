@@ -21,7 +21,7 @@
         let title="Template literals";
         let lists= ["Template literals", "Javascript", "es6"];
         let html=`<h2>${title}</h2><ul style="list-style: circle">`;
-        for( const x of lists){
+        for( let x of lists){
             html+= `<li>${x}</li>`;
         }
         html+= `</ul>`;

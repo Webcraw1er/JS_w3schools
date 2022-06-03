@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>    </title>
+    <meta charset="utf-8">
+
+</head>
+<body>
+    <script>
+        var x= 123;
+        var crlf= "<br>";
+        document.write(
+        x.toString(), crlf,
+        (123).toString(), crlf,
+        (100+23).toString(), crlf
+        );
+
+        var x= 3.1415;
+        document.write(crlf,
+        x.toExponential(), crlf,
+        x.toExponential(2), crlf,
+        x.toExponential(4), crlf,
+        x.toExponential(6), crlf,
+        )
+
+        var x= 8.125;
+        document.write(crlf,
+        x.toFixed(), crlf,
+        x.toFixed(2), crlf,
+        x.toFixed(4), crlf,
+        x.toFixed(6), crlf,
+        )
+
+        var x= 8.12;
+        document.write(crlf, 
+        x.toPrecision(), crlf,
+        x.toPrecision(2), crlf,
+        x.toPrecision(4), crlf,
+        x.toPrecision(6), crlf,
+        )
+
+        var x= new Number(45);
+        y= x.valueOf();
+        document.write(crlf, y, crlf)
+        var z= 45;
+        document.write(crlf, "x==z: ", x==z, crlf, "x===z: ", x===z, crlf);
+        document.write("y==z: ", y==z, crlf, "y===z: ", y===z, crlf);
+
+        /* 5. */
+
+        document.write(crlf,
+        Number(true), crlf,
+        Number(false), crlf,
+        Number("10"), crlf,
+        Number("   10"), crlf,
+        Number(" "), crlf,
+        Number("10.33"), crlf,
+        Number("10 33"), crlf,
+        Number("John"), crlf,
+        Number(new Date("1970-01-01")), crlf,
+        Number(new Date("1970-01-02")), crlf,
+        Number(new Date("2022-06-02")), crlf,
+        )
+
+        document.write(crlf,
+        parseInt("I like True"), crlf,
+        parseInt("-10"), crlf,
+        parseInt("-10.33"), crlf,
+        parseInt("10 20 30"), crlf,
+        parseInt("decades of 5 is long enough."), crlf,
+        parseInt("5 decades"), crlf,
+        parseInt("five decades."), crlf,
+        parseInt("10.67"), crlf,
+        )
+
+        document.write(crlf,
+        parseFloat("I like True"), crlf,
+        parseFloat("-10"), crlf,
+        parseFloat("-10.33"), crlf,
+        parseFloat("10 20 30"), crlf,
+        parseFloat("decades of 5"), crlf,
+        parseFloat("5 decades"), crlf,
+        parseFloat("five decades."), crlf,
+        parseFloat("10.33"), crlf,
+        )
+
+        /* 6. Number properties demonstrated below belongs to the JS's number object wrapper, "Number". */
+
+        var x= Number.MIN_VALUE;
+        document.write(crlf, x, crlf);
+        var x= Number.MAX_VALUE;
+        document.write(x, crlf);
+        var x= Number.POSITIVE_INFINITY;
+        document.write(x, crlf);
+        var x= Number.NEGATIVE_INFINITY;
+        document.write(x, crlf);
+        var x= 1/0;
+        document.write(x, crlf);
+        var x= -1/0;
+        document.write(x, crlf);
+        var x= Number.NaN;
+        document.write(x, crlf);
+        var x= 100/ "apple";
+        document.write(x, crlf);
+
+        /* 7. */
+
+    </script>
+</body>
+</html>
+
+<!--
+1. primitive values like 3.14 or 2007 cannot have properties and methods(bcz they're not objects)
+    but since JS treats the primitive values as objects when executing, they do have properties and methods.
+
+2. .toString() method 
+        returns  a number as a string.
+
+3. .toFixed() method
+        returns a string, with a number written with a specified length.
+    .toPrecision() method
+        similar to toFixed. 
+        toFixed only fixes how many decimals there should be.
+        toPrecision fixes the overall length of the number.
+
+4. .valueOf() method
+        returns a number as a number.
+        it converts objects into numbers, so you use it accordingly.
+
+5. three ways to convert variables to numbers:
+    Number()
+    parseInt()
+    parseFloat()
+
+    1) Number()
+        returns a number. if not a number, returns NaN.
+    
+        Number(new Date(1999-02-12))
+            returns the number of miliseconds passed since 1970-01-01
+
+    2) parseInt()
+        parses a string and returns a whole number. spaces are allowed. only the first number returned.
+        if the string does not start with a number, NaN is returned.
+    
+    3) parseFloat()
+        works the same as parseInt, but converts a number as float.
+        more useful than parseInt.
+
+6. MIN_VALUE
+    MAX_VALUE
+    POSITIVE_INFINITY
+    NEGATIVE_INFINITY
+    NaN
+
+    These all properties above belong to JS's number object wrapper called Number. 
+    They all can be accessed via the wrapper, Number.
+    
+    IF IT IS ATTEMPTED TO BE ACCESSED WITH A "VARIABLE, EXPRESSION, OR VALUE", 
+        it will return "undefined".
+
+-->
+

@@ -1,0 +1,101 @@
+<!Doctype html>
+<html>
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <script>        
+        crlf= "<br>";
+        const array1= [
+            "volvo", 
+            "Nissan", 
+            "hyundai"
+        ];
+        array1[2]= "ferrari";
+        document.write(array1, crlf);
+        
+        const array2=[];
+        array2[1]= "Rambo";
+        array2[3]= "porche";
+        const person= {firstName: "John", lastName: "Ford"};
+        array2[2]= person.lastName;
+        let array3= new Array("Crysler", "Bentz");
+        array2[0]= array3[1];
+        array2[4]= array1;
+        document.write(array2, crlf);
+
+        document.write(array1[0], " is neat and fast.", crlf, crlf);
+        document.write("the type of array in JS is: ", typeof array2);
+        document.write(crlf, "the length of array2 is: ", array2.length, crlf, crlf);
+
+        var html= `<hr><h2>Car makers<h2><ul style="list-style: circle; font-weight: normal;
+            font-size: 70%;">`;
+        for(var i=0; i< array2.length; i++){
+            html+= `<li>${array2[i]}</li>`;
+        }
+        html+= `</li>`;
+        document.write(html);
+
+        /* push new elements */
+
+    array2.push("sonata");
+    array2[array2.length]= "toyota";
+    document.write("<br>");
+
+        var text= `<hr><h2 style="align: left">Car makers<h2><ul style="list-style: circle; font-weight: normal;
+            font-size: 70%;">`;
+        array2.forEach(myfunc1);
+        text+= `</ul>`;
+        document.write(text);
+        function myfunc1(value){
+            text+= `<li>${value}</li>`;
+        }
+
+    </script>
+</body>
+</html>
+
+
+<!--
+1. why use arrays? 
+    to contain multiple values in one variable.
+
+2. const with arrays: 
+    it does not define a constant array but it defines an array reference to be a constant.
+        which means the pointer of the array's name is fixed to a certain address.
+        which also means that you cannot redeclare the array.
+        which further means that you are free to change the value of an element of the array.
+
+3. arrays can be declared first, and you can assign values later.
+
+4. an array in JS is strictly an objects, but best described as arrays.
+    BECAUSE 
+        objects use names to access elements, for example, 
+            const person= {firstName: "John", lastName: "Doe"};
+            document.write(person.firstName);
+
+        arrays use numbers to access elements.
+            const array1= ["volvo", "hyundai"];
+            document.write(array1[0]);
+
+        HOWEVER YOU CAN HAVE "ELEMENTS OF OTHER OBJECTS" as an element of an array.
+                            also a whole another array.
+
+5. the real strength of JS array is the built-in properties and methods.
+    for ex) the last element of an array is always 
+            array[array.length - 1]
+
+        
+6. note that both arrays and objects are interpreted as "objects" with "typeof"
+    so the two techniques to verify if something is an array.
+    
+    1) Array.isArray(myRandomArray) method
+    2) myRandomArrat instanceof Array;
+            -> this will return true if an object is constructed via "object".
+
+            
+-->

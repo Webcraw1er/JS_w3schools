@@ -1,0 +1,88 @@
+<!Doctype html>
+<html>
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <script>
+        /* 2. */
+        let x= 0.2;
+        let y= 0.1;
+        document.write(x+y);
+        let z= (x*10 + y*10) /10;
+        document.write("<br>", z);
+
+        /* 3. */
+        let w= "100";
+        let q= "10";
+        let p= "ten";
+        document.write("<br>" + w/q);
+        document.write("<br>", isNaN(q+p));
+        document.write("<br>", typeof NaN);
+
+        /* 5. */
+        let infi=2;
+        while(infi != Infinity) {
+            infi *=2;
+        }
+        document.write("<br>", infi);
+        document.write("<br>type of infinity is: ",typeof Infinity);
+        let plus= 2/0;
+        let minus= -2/0;
+        document.write("<br>", plus, minus);
+</script>
+</body>
+</html>
+
+
+<!--
+1. numbers in JS: number(fraction) is stored in 0~ 51, exponent in 52~ 62, and sign bit as 63.
+    as you know, 10 bits store about a kilobyte(1000), so the python number is accurate upto 15 digits.
+
+    maximum will be 17 digits.
+
+2. because of this(not having a specific num type and ahaving a bunch of digits) python num are
+    not always accurate.
+
+    and it helps to multiply and divide with certain numbers.
+
+3. Js always interprets numeric contents.
+    so it tries to convert the string conetent into numbers when NUMERIC OPERATIONS are given.
+
+        however the + operator is both addition and concatenation operator in Js, 
+        so if given 
+            let w= "100";
+            let q= "10";
+            document.write("<br>" + w + q);
+        it will only concatenate them as strings.
+
+4. NaN:         not a number.
+    let x= 100/ "apple"; 
+    document.write(x);
+        하면 NaN 이 뜸. 왜냐 넘버가 아닌니까.
+
+    isNaN():    determines if the given parameter is a number.
+    NaN is a number.
+    typeof NaN returns "number".
+    
+5. infinity: shit you get when you calculate a number outside the largest possible number.
+    
+6. when proceeded by 0x, JS interprets the number as hexadecimal.
+    JS displays numbers as decimals by default.
+    However the .toString() method converts and outputs numbers from base 2 to base 64.
+
+
+7. if you make a number object with new keyword like let num1= new Number(500),
+    they become objects.
+
+        let num2=500;
+    then num1== num2 is true, 
+    but num1===num2 isn't.
+    
+    btw comparing two JS objects is always false.
+
+-->
