@@ -1,0 +1,52 @@
+<!Doctype html>
+<html>
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <script>
+        let crlf= "<br>";
+        let i=0;
+        let text="";
+        for( let i= 3; i<7; i++){
+            text+= i;
+        }
+        document.write(text);
+    </script>
+</body>
+</html>
+
+
+<!--
+1. Js loop serves different purposes.
+    for             loops through a block of code a number of times.
+    for in          loops through the properties of an object.
+    for of          loops through the values of an iterable object.
+    while           loops through a block of code while a specified condition is true.
+    do while        same as above.
+
+    1) for loop 
+        for( statement 1; statement 2; statement 3) { code block }   
+            statement 1 is executed (only once), before the execution of code block.
+            statement 2 defiens the condition for executing the code block.
+            statement 3 is executed (every time) after the code block has been executed.
+
+            statement 1 is optional. 
+                you can initiate multiple values, or can even initiate no variables at all.
+
+            statement 2 is also optional. 
+                the for loop will go on as long as statement 2 is true.
+                so if you omit statement 2, you must provide "break;" to prevent infinite loop.
+            
+            statement 3 is optional.
+                you can omit this, or even do decrements or subtractions.
+                    ex) y-= 15;
+                
+        all the variables provided inside the for loop is block scope; they will be only visible
+        inside the for loop.
+
+-->

@@ -1,0 +1,64 @@
+<!Doctype html>
+<html>
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <script>
+        let crlf= "<br>";
+        let age= 15;
+        let variable= (age<18) ? "weak" : " old";
+        document.write(variable);
+        let x= "18";
+        x= Number(x);
+        document.write(crlf, x, crlf, "is x a number? ", !isNaN(x), crlf, "is x smaller than 20? " , x<20);   
+    </script>
+</body>
+</html>
+
+<!--
+
+1. comparison operators
+    GIVEN THAT x= 5;
+
+==	    equal to	                    x == 8	    false	
+                                        x == 5	    true	
+                                        x == "5"	true	
+===	    equal value and equal type	    x === 5	    true	
+                                        x === "5"	false	
+!=	    not equal	                    x != 8	    true	
+!==	    not equal value or not equal type	x !== 5	false	
+                                            x !== "5"	true	
+                                            x !== 8	true	
+>	    greater than	                x > 8	    false	
+<	    less than	                    x < 8	    true	
+>=  	greater than or equal to	    x >= 8	    false	
+<=	    less than or equal to	        x <= 8  	true
+
+2. logical operators
+operator    description     
+&&          and             (x<10 && y<5)
+||          or              (x==5 || y==3)
+!           not             !(x==y)             <-- this one's true!
+
+3. Conditional(ternary) operator
+
+    Can also assign different values on a variable based on some situations.
+    syntax: variableName= (condition) ? value1 : value2;
+    
+4. When a number is compared to other types like string, it returns NaN, which is always false.
+    When a couple numbers are compared as strings, "12" is smaller than "2",. which is set according
+    to the alphabetic order.
+
+    to prevent this, you must change the string to a number, using Number() function.
+        ex) let x;
+            x= Number(x)
+
+5. isNaN:
+        if the given parameter is a number, return false.
+        if not a number returns true.(cause NaN is a abbr. of Not a Number).
+-->

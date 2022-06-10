@@ -1,0 +1,41 @@
+<!Doctype html>
+<html>
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <script>
+        let crlf= "<br>";
+        let i=0;
+        let text1= "";
+        while(i < 10){
+            text1+= "The number is " +i +crlf;
+            i++;
+        }
+        document.write(text1);
+
+    </script>
+</body>
+</html>
+
+
+<!--
+1. while loop loops through a block of code as long as a specified condition is true.
+    syntax:
+        while(condition) { code block }
+
+    If you forget the increment of the variable used in the condition, it will go into an endless loop
+    and therefore crash your browser.
+    
+2. "do while" loop
+    the do while syntax will execute the code block once, before checking if the condition is true,
+    and then repeat the loop as long as the condition is true.
+    syntax:
+        do { code block } while(condition);
+
+
+-->

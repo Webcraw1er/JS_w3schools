@@ -1,0 +1,45 @@
+<!Doctype html>
+<html>
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <style>
+        
+    </style>
+    <script>
+
+    </script>
+</head>
+<body>
+    <h1>Sort by names</h1>
+    <button onclick="myfun()">sort!</button>
+    <p id="demo">right here</p>
+    <script>
+        const myarr= [
+            {name: "Justin", age: 24},
+            {name: "Britney", age: 27},
+            {name: "john", age: 25}
+        ];
+
+        displaya();
+
+        function myfun() {
+        myarr.sort(function(a, b){
+    let x = a.name.toLowerCase();
+    let y = b.name.toLowerCase();
+    if (x < y) {return 1;}
+    if (x > y) {return -1;}
+    return 0;
+  });
+  displaya();
+
+}
+        function displaya(){
+            document.getElementById("demo").innerHTML= 
+            myarr[0].name + " " + myarr[0].age + "<br>" +
+            myarr[1].name + " " + myarr[1].age + "<br>" +
+            myarr[2].name + " " + myarr[2].age;
+        }
+    </script>
+</body>
+</html>

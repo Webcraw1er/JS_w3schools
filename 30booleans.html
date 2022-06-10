@@ -1,0 +1,39 @@
+<!Doctype html>
+<html>
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <script>
+        let crlf= "<br>";
+        document.write(Boolean(10 > 9));
+        document.write(crlf, 10>9);
+        document.write(crlf, Boolean(0));
+        document.write(crlf, Boolean(""));
+        document.write(crlf, Boolean(" "), crlf);
+
+        let x= false;
+        let y= new Boolean("");
+        document.write(crlf, x== y, crlf);
+        document.write(x=== y, crlf);
+        let z= new Boolean("");
+        document.write("and as you know, comparing to object is always: ", y==z, " and ", y===z);
+    </script>
+</body>
+</html>
+
+
+<!--
+
+1. With a "Boolean()" function, you can figure out true/false value of any types of variables.
+
+2. Any variable with a "value" is considered "TRUE".
+    an empty string ""                          <-- this shit is considered false.
+    a string with a space " "                   <-- this is considered true.
+    0 or NULL or NaN or undefined or false      <-- these are all false. 
+
+3. Booleans can be created as objects, but just don't do it. it isn't classy.

@@ -1,0 +1,70 @@
+<!Doctype html>
+<html>
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <script>
+        let crlf= "<br>";
+        forloop: for(let i=0; i<10; i++){
+            document.write("the number is ", i, crlf);
+            if(i==3) break forloop;
+        }    
+        document.write(crlf, crlf);
+        continueloop: for(let i=0; i<10; i++){
+            if(i===3) continue continueloop;
+            document.write("the number is ", i, crlf);
+        }
+
+        document.write(crlf, crlf);
+        let text3="";
+    const cars=[12, 13, 14, 15];
+    numlist: {
+        document.write(cars[0]+ crlf)
+        document.write(cars[1]+ crlf)
+        break numlist;
+        document.write(cars[2]+ crlf)
+        document.write(cars[3]+ crlf)
+    }
+
+    /* 2. */
+    document.write(crlf, "2.", crlf);
+
+    for(let i=10; i>0; i--){
+        document.write(crlf);
+        for(let j=i; j>0; j--){
+            document.write(j);
+            if(i==6 && j==3) break;
+        }
+    }
+    document.write(crlf, crlf);
+    bigfor: for(let i=10; i>0; i--){
+        document.write(crlf);
+        for(let j=i; j>0; j--){
+            document.write(j);
+            if(i==6 && j==3) break bigfor;
+        }
+    }
+
+
+    </script>
+</body>
+</html>
+
+
+<!--
+1. the break statement "jumps out" of the loop.
+    the continue statement "jumps over" one iteration of the loop.
+    
+    break can also jump you out of the for loop.
+
+2. you can use the label to specify which loop you would like to break or continue.
+    the break and continue are the only statements that can "break out of" code blocks,
+    so the labels come with these.
+
+
+-->

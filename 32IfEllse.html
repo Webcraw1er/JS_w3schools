@@ -1,0 +1,38 @@
+<!Doctype html>
+<html>
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <script>
+        let crlf= "<br>";
+        let thisTime= new Date().getHours();
+        document.write("It is ", thisTime, " right now.", crlf);
+        if(  thisTime < 18 && thisTime > 12){
+            document.write("Good afternoon");
+        }
+        else if( thisTime < 12 && thisTime >= 0){
+            document.write("Good morning");
+        }
+        else
+            document.write("Good evening");
+    </script>
+</body>
+</html>
+
+
+
+<!--
+1. if           : if a specified condition is true, execute it.
+    else        : if a specified condition is false, execute it.
+    else if     : if the first condition is false, specify a new condition to test.
+    switch      : specify many blocks of code to execute
+
+
+
+
+-->

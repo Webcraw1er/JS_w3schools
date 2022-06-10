@@ -1,0 +1,50 @@
+<!Doctype html>
+<html>
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <script>
+        /* 2. */
+        let crlf= "<br>";
+        var d= new Date();
+        document.write(d, crlf);
+        d= new Date(2018, 3, 23, 10, 33, 30);
+        document.write(d, crlf);
+        d= new Date("February 12, 1999, 11:13:01");
+        document.write(d, crlf);
+        d= new Date(100000000000);
+        document.write(d, "   is equivalent with...   ");
+        document.write(d.toUTCString(), " ...or with...", d.toDateString())
+
+
+
+
+    </script>
+</body>
+</html>
+
+
+<!--
+1. by default, the JS displays the date in full strings, via the built-in .toString() method.
+
+2. there are four ways to create a new date object:
+        1. new Date();
+        2. new Date(year, month, ...);
+                 the given parameters represent respectively year, month, day, hour, minute, second, ms
+                 you can just give a few numbers and omit the rest if want, 
+                BUT if you write only one parameter, it is regarded as a millisecond, thus the new Date()
+                itself is interpreted as 4.  
+        3. new Date(dateString);
+        4. new Date(milliseconds);
+            1 day is 86,400,000 ms.
+
+3. JS automatically converts the date to strings with the inbuilt tostring(), but you can do somethings.
+    toUTCString()   :   converts a date to a UTC string.
+    toDateString()  :   makes the JS to write the date into a more readable form, 
+
+-->

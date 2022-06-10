@@ -1,0 +1,78 @@
+<!Doctype html>
+<html>
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <script>
+        let crlf= "<br>";
+        document.write("Two days later its... ");
+        let text="";
+        switch(new Date().getDay()+2 > 6 ? new Date().getDay()+2-7 : new Date().getDay()+2 ){
+            case 6:
+                text= "Saturday!"; break;
+            case 0:
+                text= "Sunday!"; break;
+            default:
+                text= "Still not the sweet weekend";
+        }
+        document.write(text, crlf, crlf, "And now its... ");
+
+        /*  3. */
+
+        switch(new Date().getDate()){
+            case 4:
+            case 5:
+                text= "Soone its weekend!"; break;
+            case 6:
+            case 0:
+                text= "It is sweet weekend!"; break;
+            default:
+                text= "Still far away from weekend..."; break;
+        }
+        document.write(text, crlf, crlf);  
+
+        /* 5. */
+        let y= "1";
+        switch (y){  
+            case 1: text= "yes!"; break;
+            default: text= "nay"; break;
+        }
+        document.write("Does it match? ", text);
+
+    </script>
+</body>
+</html>
+
+
+<!--
+1. How this works
+    1) THe switch exp is evaluated only once.
+    2) the value of the exp is compared with the values of each case.
+    3) if there is a match, the assossiated block of code is executed.
+    4) IF THERE IS NO MATCH, the "default" code block is executed.
+
+2. IMPORTANCE OF "BREAK"
+    IF YOU OMIT IT, the next case will be executed even if the evalaution does not match the case.
+
+3. Common code blocks
+    in the example 3, case 4 and case 5 shares the same code. 
+        if the switch evaluation evaluates as 4 or 5, the same code will be executed.
+    so does case 6 and case 0.
+    
+4. other switching details
+    If multiple cases match the evaluation, only the first case is selected.
+    If no cases match the evaluation AND there is no default block, the switch statement
+        carries on to the next existing statements(if there is any).
+
+5. the switch comparison uses the "===" operator.
+    the values must match, AND be of the same type.
+
+
+
+
+-->

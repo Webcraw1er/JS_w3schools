@@ -1,0 +1,52 @@
+<!Doctype html>
+<html>
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <script>
+        var d= new Date("2015-03-25");
+        document.write(d, "<br>");
+        let ms= Date.parse("March 12 2015");
+        document.write(ms, "<br>");
+        const newDate= new Date(ms);
+        document.write(newDate, "<br>");
+        let oriDate= new Date("March 12 2015");
+        document.write("the original date was -> ", "<br>", oriDate);
+    </script>
+</body>
+</html>
+
+<!--
+1. Dates in JS has three types:
+    1) ISO Date         "2015-03-14"    <--- this is the ISO 8601 date, the most popular one.
+    2) Short Date       "03/25/2014"
+    3) Long Date        "25 Mar 2015" or "Mar 25 2015"
+
+        the ISO format follows the strict standard in JS.
+        others, they are not so well defined and might be browser specific.
+
+    independent of the input format, the Js will output dates as full text string format.
+
+    Unlike the normal 
+        new Date();
+    the ISO dates can be written as only year, 
+        ex) new Date("2015");
+    because it is a string.
+
+2. ISO dates can be written with added hours, minutes, and seconds.
+        ex) (YYYY-MM-DDTHH:MM:SSZ);
+    "날짜" 와 "시간" 부분들은 T로 나뉘어진다.
+    UTC 시간임을 나타내기 위해 Z를 붙인다.
+    UTC에 의거하여 시간을 바꾸고 싶다면, Z를 떼어내고 +HH:MM 이나 -HH:MM 를 붙인다.
+
+    both the date input and output will be modified according to your browser.
+
+3. remember that the parse() method is a built-in method of the library "Date()", 
+    so it cannot be used with your own variable.
+    only write Date.parse()
+-->

@@ -1,0 +1,67 @@
+<!Doctype html>
+<html>
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <script>
+        /*  1. */
+        let crlf= "<br>";
+        const person= { fname: "John", lname: "Doe", age: 25};
+        let text= "";
+        for( let x in person){
+            text+= `${person[x]} `;
+        }
+        document.write(text, crlf);
+
+        /* 2. */
+        const numbers= ["1", "23", 456, 7890];
+        let numadd= 0;
+        let strcon= "";
+        for( let x in numbers){
+            numadd+= Number(numbers[x]);
+            strcon+= numbers[x];
+        }
+        document.write(crlf, "Number addition: ", numadd, crlf, "string concatenation: ", strcon);
+
+        /* 3. */
+        const numbers2=[1, 2, 3, 4, 5];
+        let text3= "";
+        numbers.forEach(myfunc1);
+        function myfunc1(valu, index, array){
+            text3+= valu;
+        }
+        document.write(crlf, crlf, text3, crlf);
+    </script>
+</body>
+</html>
+
+
+<!-- 
+1. For in statement loops through the properties of an object.
+    syntax:
+        for (key in object){ code block }
+    
+    in the code above, 
+        1) the "for in " loop iterates over the person object.
+        2) each iteration returns a key(x)
+        3) the key is used to access the value of the key
+        4) the value of the key is person[x]
+
+2. for in
+        can also loop through the properties of an array.
+
+        BUT the use of for in is not recommended because the array value may not be accessed 
+        as the expected order.
+        Rather, use for || for of || Array.forEach() loop.
+
+3. .forEach() calls a function(a callback function) once for each array element.
+    forEach() in particular accepts upto three arguments, which are value, index, and array itself.
+    that's why the above example is written like that.
+     
+
+-->

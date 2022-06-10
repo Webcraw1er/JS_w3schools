@@ -1,0 +1,105 @@
+<!Doctype html>
+<html>
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <script>
+        let crlf= "<br>";
+        
+    </script>
+</body>
+</html>
+
+
+<!--
+
+    <A callback function is a function that is passes as an argument to another function>
+    <is invoked after some kind of event.>
+
+    35loop_for_in 에서 인자를 패싱하지 않았는데도 파라미터가 세개 있던 이유는 그냥 그게 
+    built-in forEach 함수였기 때문.
+    다른 콜백들은 사용자정의함수이기 때문에 인자를 대부분 가지지조차 않는다.
+
+    따지고보면 html에서 onclick 으로 함수를 호출하는 것도 콜백이다.
+    아니, 이게 진정한 콜백이지.이건 호출하는 주체가 이 함수를 저장해두었던 시스템이니까.
+
+    아래에는 콜백의 예제들이다.
+            콜백도 보통의 아규먼트와 같다. 이걸 패싱할 뿐이지, 패싱을 받는 쪽에서 파라미터로 
+            아무 이름으로 받을 수 있다. 다만 패싱할 때는 진짜 함수 이름을 써야할 뿐이지.
+
+            // The callback method
+            function meaningOfLife() {
+                log("The meaning of life is: 42");
+            }
+
+
+            // A method which accepts a callback method as an argument
+            // takes a function reference to be executed when printANumber completes
+            function printANumber(int number, function callbackFunction) {
+                print("The number you provided is: " + number);
+            }
+
+            // Driver method
+            function event() {
+               printANumber(6, meaningOfLife);
+            }
+       
+
+            설명) printANumber()의 두 번째 매개변수로 function 타입의 callbackFunction을 인자로 받는다.
+ 
+            event()내부에서 printANumber(6, meaningOfLife); 를 하고 있는데,
+            meaningOfLife는 printANumber의 매개변수인 callbackFunction에 전달된다.
+
+            따라서 meaningOfLife는 위에서 밝힌 1번 정의(다른 함수의 인자로써 이용되는 함수)에 부합하여 
+            callback 함수라고 할 수 있다.
+      
+
+
+
+
+            //hello!
+            function printHello(){
+             print('hello');
+            }
+            //bye!
+            function printBye(){
+              print('bye');
+            }
+
+            //특정 함수를 매개변수로 받아서 3초 뒤에 실행하는 함수
+            function sleepAndExecute(sleepTimeSecond, callback){
+              //sleepTimeSecond 초 만큼 대기
+              sleep(sleepTimeSecond);
+              //전달된 callback 실행
+              callback();
+            }
+
+            //3초 뒤에 hello 출력하기
+            sleepAndExecute(3, printHello);
+
+            //5초 뒤에 bye 출력하기
+            sleepAndExecute(5, printBye);
+
+
+            sleepAndExecute는 주어진 시간(초)만큼 대기했다가, callback 함수를 실행시키는 함수다.
+ 
+            이런식으로 작성하면, sleepAndExecute는
+            얼마나 대기할 것인지도 마음대로 정할 수 있고,
+            어떤 함수를 실행할 것인지도 마음대로 정할 수 있다.
+                    
+                    
+            callback함수의 첫 번째 정의인 "다른 함수의 인자로써 이용되는 함수"의 관점에서 바라보자.
+                    
+            sleepAndExecute(3, printHello); 에서는
+            printHello를 sleepAndExecute의 매개변수(인자)로 전달하므로,
+            printHello는 callback 함수라고 할 수 있다.
+                    
+            마찬가지로, sleepAndExecute(5, printBye)에서는
+            printBye를 sleepAndExecute의 매개변수(인자)로 전달하므로,
+            printBye는 callback 함수라고 할 수도 있다.
+    

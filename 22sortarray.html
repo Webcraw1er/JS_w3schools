@@ -22,14 +22,61 @@
         crlf, "lowest value: ", points[0], crlf);  
  
 
-        document.write(crlf, "sorted from high  \t: ", points.sort(function(a, b){return b-a}));
+        document.write(crlf, "sorted from high  : ", points.sort(function(a, b){return b-a}));
 
         points.sort(function(a, b){return 0.5- Math.random()});
-        document.write(crlf, "sorted random     \t\t: ", points);
+        document.write(crlf, "sorted random     : ", points);
 
+        /* 3. just  a random function */
         document.write(crlf, Math.random());
         document.write(crlf, Math.random());
         document.write(crlf, Math.random());
+
+        /*  4.  */
+        const cars= [
+            {type: "Volvo", year: 2016},
+            {type: "Saab", year: 2001},
+            {type: "BMW", year: 2010},
+        ];
+
+        cars.sort(function(a,b){return a.year - b.year});
+        document.write(crlf, crlf, cars[0].year, crlf)
+        var carsJson= JSON.stringify(cars);
+        document.write(carsJson, crlf, crlf);
+        </script>
+    
+    <h1>Sort by names</h1>
+    <div id="rightHere">right here</div>
+    <input type="button" value="click me" onclick="myfunc2()">
+    <script>
+        const myarr= [
+            {name: "Justin", age: 24},
+            {name: "Britney", age: 27},
+            {name: "john", age: 25},
+        ];
+
+        displayMyArr();
+
+        function myfunc2(){
+            myarr.sort(function (a,b){
+                let x= a.type.toLowerCase();
+                let y= b.type.toLowerCase();
+                if (x < y) { return 1; }
+                if (x > y) { return -1; }
+                return 0;
+            });
+            displayMyArr();
+        }
+
+        function displayMyArr(){
+            document.getElementById("rightHere").innerHTML= 
+            crlf+ myarr[0].name+ " "+ myarr[0].age+
+            crlf+ myarr[1].name+ " "+ myarr[1].age+
+            crlf+ myarr[2].name+ " "+ myarr[2].age;
+        }
+    </script>
+
+
 </script>
 </body>
 </html>
@@ -49,6 +96,26 @@
             2. if (a-b) is negative, which means A IS SAMLLER, a comes before b.
                 if      is positive, which means A IS BIGGER,  a comes after b.
 
-        Math.random() creates a random float between 0 and 1.
+    there is no built-in function for finding the min and max value,
+    so you just arrange them with sorting, and pick an index accordingly.
+
+    or you use your own function.
+    ex)
+        function myfunc1(arr){
+            let len= arr.length;
+            let max= -Infinity;
+            while(len--){
+                if(arr[len]> max){
+                    max= arr[len];
+                }
+            }
+            return max;
+        }
+    
+3. Math.random() creates a random float between 0 and 1.
+
+4. when printing arrays, you can;t just print the whole object right away, 
+        you must JSON'ize the shit. just like I wrote above.
+
 
 -->
