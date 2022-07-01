@@ -1,0 +1,107 @@
+<!Doctype html>
+<html>
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <script>
+        let crlf= "<br>";
+        let myvar;
+        document.write(
+            typeof "John", crlf,
+            typeof 3.14, crlf,
+            typeof NaN, crlf,
+            typeof false, crlf, 
+            typeof [1, 2, 3, 4], crlf,
+            typeof {name: "John", age: 23}, crlf,
+            typeof new Date(), crlf,
+            typeof function myfuinc() {}, crlf,
+            typeof myvar, crlf,
+            typeof myvar2, crlf, 
+            typeof null, crlf,
+        )
+
+        /* 4. */
+        document.write(crlf, crlf, "How about the constructors?", crlf);
+        document.write(
+            "John".constructor, crlf,
+            (3.14).constructor, crlf, 
+            false.constructor, crlf, 
+            [1, 2, 3, 4].constructor, crlf, 
+            {name: "John", age: 24}.constructor, crlf, 
+            new Date().constructor, crlf, 
+            function myfunc1(){}.constructor, crlf, 
+        );
+
+        let arr1=[1, 2, 3, 4];
+        if(isArray(arr1)){
+            document.write(crlf, crlf, "yes, its an array");
+        }
+
+        function isArray(array) {
+            return array.constructor.toString().indexOf(Array) > -1;
+        }       //indexOf() returns the index of the matching spot of the given parameter, 
+                // comparing it to the array. so if the constructor property returns the string
+                // "Array", there must be a match, therefore returning a number biggetr than -1.
+                // hence the return is true, so the code executes as it is.
+                // you can simply write 
+                    // return array.constructor=== Array;
+
+        /* 4. */
+        let names= ["John", "Jane"];
+        document.write(crlf, crlf, "the type of \"names\" array is: ", typeof names);
+        names= undefined;
+        document.write(crlf, "upon setting the value to undefined, the type is: ",
+        typeof names, crlf, "with the value as: ", names);
+
+
+    </script>
+</body>
+</html>
+
+<!--
+1. JS has 5 different data types that can contain values.
+    string
+    number
+    boolean 
+    object 
+    function
+
+        AND IN OBJECTS THERE ARE 6 TYPES.
+            OBJECT
+            DATE
+            ARRAY
+            STRING
+            NUMBER
+            BOOLEAN
+
+    AND TWO MORE TYPES THAT CANNOT CONTAIN VALUES.
+        null
+        undefined
+
+2. typeof operator is used to find the data type of a JS variable.
+
+3. the "null" returning as an object is a huge bug.
+    the arrays returning as objects is because in JS, arrays ARE objects.
+
+4. A variable without a value, has a value "undefined", and the type also, "undefined".
+    ANY VARIABLE can be emptied, by setting the value to undefined. upon doing this, the type will 
+    also be "undefined".
+
+    empty values, like
+        let cars="";
+    has nothing to do with undefined. 
+    an emtpy string has both legal values and types.
+
+5. "null" is supposed to mean nothing, but in JS it is an "object"
+    consider this as a critical bug.
+
+    typeof undefined    //undefined
+    typeof null         // object
+    null=== undefined   //false
+    null== undefined    //true
+-->

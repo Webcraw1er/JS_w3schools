@@ -1,0 +1,66 @@
+<!Doctype html>
+<html>
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <script>
+        let crlf= "<br>";
+        /* 5. */
+        myfunc1();
+        function myfunc1(){ carName="volvo"; }
+        document.write(carName);
+    </script>
+</body>
+</html>
+
+<!--
+
+1. there are three types of scopes.
+    1) block scopes
+    2) function scopes
+    3) global scopes
+
+    Before ES6(2015), there was nothing as block scope.
+    BUT as "let" and "const" are introduced, the two keywords made it nessessary for 
+    the notation of "Block scope" to emerge.
+        
+        variables declared inside a { } block cannot
+
+
+2. anything declared inside a function has a function scope, 
+    only accessable in the function.
+
+3. Like you learned in the low-level languages, function scope variables are created with the start 
+    of the function and deleted upon completion of it.
+
+4. HOWEVER UNLIKE C, any variable declared outside the function or { } has a global scope.
+    IN c, declaring a variable in the main function doesnt make it global.
+    So its the matter of a "shell".
+    in C, the most outer shell is the page itself, outside the main function.
+    in JS, the most outershell is either <head> or <body>, when something goes outside of those,
+         they are invisible to JS and therefore unreadable.
+
+5. Shoking news: if you  assign a value to a variable that has not been declared, 
+    it AUTOMATICALLY becomes global.
+
+6. in JS, the global scope is the JS environment.
+    in HTML, the global scope is the window object.
+    
+    so global variables defined with "var" belong to the window object.
+        ex) var carNAme= "volvo";
+            // code here can use window.carName.
+    however "let" variables does not belong to the window object.
+       ex) var carNAme= "volvo";
+            // code here CANNOT use window.carName.
+
+    DO not create global variables unless you intend to.
+        your global variables can overwrite window variables( or functions)
+
+    Function arguments(variables) work as local variables inside the function.
+
+-->

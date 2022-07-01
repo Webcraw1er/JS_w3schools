@@ -1,0 +1,50 @@
+<!Doctype html>
+<html>
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <h1 id="test1">Hello</h1>
+    <h2 id="test2">Hello</h2>
+    <script type="module">
+        let crlf= "<br>";
+        import {car1, car2} from "./53modulesMod.js";
+        //let name= car1.name;
+        document.getElementById("test1").innerHTML= car1.name;
+        document.getElementById("test2").innerHTML= "the maker: "+ car1.name+ crlf+ "made in: "+ 
+        car1.year+ crlf+ crlf;
+    </script>
+</body>
+</html>
+
+<!--
+1. modules allow you to break up codes into seperate files
+    and import functions and variables from any file.
+        this actions rely on "import" and "export" statements
+
+2. unlike .py modules, you have to specify which functions or variables you want to export.
+    you can do this in two different ways:  
+        1) inline
+            ex) export const name= "Jesse";
+                export const age= 40; 
+
+        2) all at once at the bottom.
+            ex) const name= "Jesse";
+                const age= 40;
+                export {name, age};
+
+3. default exports syntax:
+        export default message
+
+4. importing syntax: 
+        import { name, age } from "/filename.js";
+    
+5. REMEMBER THAT modules only work in HTTP(s) protocol, not file:// protocols.
+
+
+
+-->

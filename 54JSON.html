@@ -1,0 +1,73 @@
+<!Doctype html>
+<html>
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <h2 id="demo"></h2>
+    <script>
+        let crlf= "<br>";
+        let text= '{ "employees": [\
+                {  "firstName": "John", "lastName": "Doe" },\
+                {  "firstName": "Anna", "lastName": "Smith" },\
+                {  "firstName": "Peter", "lastName": "Jones" } ]}';
+
+        const obj1= JSON.parse(text);
+        document.write(obj1.employees[1].firstName);
+        document.getElementById("demo").innerHTML= "the last name is : " + obj1.employees[1].lastName;
+        console.log(obj1.employees[1].firstName);
+    </script>
+</body>
+</html>
+
+<!--
+1. JSON is an abbreviation of (JAvascript Object Notation).
+2. is used for storing and transporting data.(when data is sent from a server to a web page.)
+3. is a lightweight data interchange format.
+4. is language independent
+        it is a pure text, so every computer languages can read JSON data.
+5. JSON is self-describing and easy to understand.
+
+6. JSON format is syntactically identical to the code for creating JS objects.
+    Thus is easier to convert into native JS objects.
+
+    the following is an example Of a JSON, which shares the same charecteristics with a JS object,
+        ex)
+            {
+                "employees": [
+                    {"firstname":"John", "lastname": "choi"},
+                    {"firstname":"Justin", "lastname": "Kim"}
+                ]
+            }
+        
+    IN JSON, 
+        - DATA IS WRITTEN IN NAME/VALUE PAIRS, IN DOUBLE QUOTES.
+                JS allows both single/double quotes, JSON does not.
+        - DATA IS SEPERATED BY COMMAS.
+        - CURLY BRACES HOLD OBJECTS.
+        - SQUARE BRACKETS HOLD ARRAYS.
+        - just like in JS, objects can obtain multiple name/value pairs.
+        - just like in JS, an array can contain objects.
+
+7. THE USAGE OF JSON is to read data from a web server, and display the data in a web page.
+    for simplicity, this can be demonstrated using a string as input.
+        first, create a JS string containing JSON syntax.
+                ex) let text= '{ "employees": [' + 
+                                '{  "firstName": "John", "lastName": "Doe" },' +
+                                '{  "firstName": "Anna", "lastName": "Smith" },' +
+                                '{  "firstName": "Peter", "lastName": "Jones" } ]}';
+
+        then, use the JS built-in function JSON.parse() to convert the string into a JS object
+                ex) const obj1= JSON.parse(text);
+        
+        finally, use the JS object in your page.
+                document.getElementById("demo").innerHTML= "the name is : " + text[1].firstName;
+
+8. when writing a JSON string, you sometimes want to break a line.
+        use a backslash when you want to do t\
+        hat. just like this.
+-->

@@ -1,0 +1,90 @@
+<!Doctype html>
+<html>
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <p id="demo">NO Error yet!</p>
+    <input type="button" value="click" onclick="myfunc1()" style="border-radius:3px ">    
+    
+    <p></p><p>please input a number between 5- 10</p>
+    <input id="textbox1" type="text">
+    <input type="button" id="button1" value="access!" onclick="myfunc2()">
+    <p id="errorHandle"></p>
+    <script>
+        let crlf= "<br>";
+        function myfunc1(){
+            try {
+                addalert("WElcome guest!");
+            }
+            catch(err) {
+                document.getElementById("demo").innerHTML= err.message;
+            }
+        }
+        
+        function myfunc2(){
+            let x= document.getElementById("textbox1").value;
+            document.getElementById("errorHandle").innerHTML="";
+            try{
+            if(isNaN(x)) { throw "not a number";}
+            if(x =="") { throw "empty value";}
+            x=Number(x);
+            if(x<5){ throw "less than 5";}
+            if(x>10){ throw "bigger than 10"; }
+            }
+            catch(err) { document.getElementById("errorHandle").innerHTML= "error! " + err;
+        }  
+        finally { document.getElementById("textbox1").value= ""; }
+    }
+
+
+        
+    </script>
+</body>
+</html>
+
+<!--
+1. "try" statement defines a code block to be ran(tested for errors).
+    "catch" statement defines a code block to handle any error. (comes in pairs with "try")
+    "finally" statement defines a code block to run regardless of the result.
+    "throw" defines a custom error.
+
+2. when an error occurs, JS will stop and generaate an error message.
+                                          == throw an exception.(throw an error)
+                technically, JS will create an "error object" with two properties.
+                    1) name
+                    2) message
+
+3. "throw" statement allows you to create a custom error.
+    technically you can throw an error just like JS does.
+
+        the value of the exception can be a JS string, Number, Boolean or an object.
+
+    with "throw" together with "try" and "catch", you can control program flow and 
+    create custom error messages.
+
+4. Error objects have "names" and "messages"
+                      -> sets or returns an error name.
+                                  -> sets or returns an error message( as a string.)
+
+        <Error name values>
+            EvalError	        An error has occurred in the eval() function
+            RangeError	        A number "out of range" has occurred( when you use a number that is outside
+                                the legal range.)
+            ReferenceError	    An illegal reference has occurred( if you freaking use(mention) a 
+                                variable that has not been declared.)
+            SyntaxError	        A syntax error has occurred
+            TypeError	        A type error has occurred(if you use a value that is outside the range
+                                of expected types.)
+            URIError	        An error in encodeURI() has occurred(} if you use illegal characters in a 
+                                URI function.)
+
+
+
+
+
+-->

@@ -1,0 +1,111 @@
+<!Doctype html>
+<html>
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <script>
+        let crlf= "<br>";
+        let text1= "Visit W3schools for more info!";
+        let n= text1.search("W3schools");
+        document.write(n);
+        let n2= text1.search(/w3SCHOOLS/i);
+        document.write(crlf, n);
+
+        /*  2. */
+        let text3= "My name is Justin kim. The name Justin came from my Korean name.";
+        let newText= text3.replace(/Justin/g, "John");
+        document.write(crlf, crlf, "original text: ", text3, crlf, "altered text: ", newText, crlf);
+
+        /* 4. */
+        let text4= " towards 100%!";
+        let newText2= text4.match(/\d/g);
+        document.write(crlf, "numbers found: ",  newText2, crlf);
+
+        /* 4 - 2) - (3) */
+        let text5= "helloooo, world, flood of information.";
+        document.write(crlf, crlf, "match(/o+/g) : ",  text5.match(/o+/g));
+        document.write(crlf, "match(/lo+/g) : ",  text5.match(/lo+/g));
+        document.write(crlf, "match(/lo*/g) : ",  text5.match(/lo*/g));
+
+        /* 5. */
+        const obj = /e/.exec("The best things in life are free!");
+        document.write(crlf, crlf, 
+        "Found " + obj[0] + " in position " + obj.index + " in the text: " + obj.input);
+
+    </script>
+</body>
+</html>
+
+
+<!--
+1. regular expression is a sequence of character that forms a search pattern.
+    The search patterns are used for text search and replace operations.
+    You can use these patterns to describe what you are searching for.
+
+2. syntax
+        /pattern/modifiers;
+        ex) /w3schools/i;
+                -> means "find the string 'w3schools' regardless of the case sensitivity.
+
+3. search() method uses an expression to search for a match, and returns the position of the match.
+            can also be used with a string as a pattern.
+    replace() method returns a modified string whewre the pattern is replaced.
+        
+4. RegExp 
+    1) modifiers: 
+        i           perform case insensitive matching
+        g           perform global match(find all matches.)
+        m           perform multiple matching.
+    
+    2) patterns
+        (1) brackets
+                can be used to find a range of characters.
+                    [abc]       find any of the characters between the brackets.
+                    [0-9]       find        "
+                    (x|y)       find any of the alternatives seperated with |.
+        (2) metacharacters
+                are characters with a special meaning.
+                    \d          find a digit
+                        ex) above.
+                    \s          find a white space charcter.
+                    \b          find a match at the beginning of a word like this: /\bRandomWord/g
+                                        or at the end of a word like this: /randomWord\b/g
+        (3) quantifiers
+                define quantities.
+                    n+          matches any strings that contains at least one n
+                    n*          matches any strings that contains zero or more occcurances of n
+                    n?          matches any strings that contains zero or one occcurances of n 
+                    
+                    remember that the quantifiers only define the quantity of the previous ONE word,
+                    so if you write 
+                        /o+/g,
+                    it picks every single "o"s, like "o", "oo", "ooo"... so on.
+                    but if you write 
+                        /lo+/g,
+                    it picks those that starts with l and has some o's after that.
+
+5. test() method
+        is a regExp expression method.
+        searches a string for a pattern, and returns true or false, depending on the result.
+        for ex), 
+            const pattern= /e/;
+            pattern.test("the best things in life are free!");
+        searches a string for the char, "e", and returns "true".
+        this can also be written as:
+            /e/.test("the best things in life are free!");
+            
+    exec() method
+        searches a string for a specified pattern, and returns the found text 
+        as an OBJECT!
+        so you can use various built-in object methods.
+
+
+            
+
+
+-->

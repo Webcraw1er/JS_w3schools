@@ -1,0 +1,85 @@
+<!Doctype html>
+<html>
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <script>
+        let crlf= "<br>";
+        const arr1= [1, 2, 3];
+        const arr2= [4, 5, 6];
+        const arr3= [7, 8, 9];
+        const arr4= [arr1, arr2, arr3];
+        document.write(arr4, crlf, typeof arr4, crlf);
+
+        const arr5= ["apple", 500];
+        const arr6= ["banana", 400];
+        const arr7= [200, 300];
+        const arr8= [arr5, arr6, arr7];
+
+        document.write(crlf, arr8, crlf, "type of arr8: ", typeof arr8, crlf, crlf);
+        const map1= new Map([arr5, arr6, arr7]);
+        document.write("original value of \"apple\": ", map1.get("apple"), crlf, 
+        "type of map1: ", typeof map1, crlf);
+
+        map1.set("apple", 100);
+        document.write("after the alteration: ", map1.get("apple"), crlf, "the size of the map: ", 
+        map1.size, crlf);
+
+        map1.delete("apple");
+        document.write(crlf, "after the deletion: ", map1.get("apple"), crlf, "the size of the map: ", 
+        map1.size);
+        document.write(crlf, crlf, "the map has \"apple\": ", map1.has("apple"));
+        map1.set("apple", 1000);
+
+        document.write(crlf, crlf, "the map has \"apple\": ", map1.has("apple"));
+        document.write(crlf, crlf, "with the typeof keyword, the map is an ", typeof map1, crlf,
+        "but with a instanceof keyword, is a map a map?: ", map1 instanceof Map, crlf, crlf,
+        "they say that the maps' keys can be of any types, so lets test it. in arr7, the key is 200",
+        " and the value 300. so does map1.get(200) print the right value? : ", map1.get(200));
+
+        let text3= "";
+        map1.forEach(function(value, key){
+            text3+= key + " = " +value + crlf;
+        });
+        document.write(crlf, crlf, text3, crlf);
+
+        let text4= "";
+        for(const x of map1.entries()){
+            text4+= x + crlf;
+        }
+        document.write(crlf, text4, crlf);
+
+    </script>
+</body>
+</html>
+
+
+<!--
+1. A map holds key-value pairs where the keys can be any datatype.
+    a map remembers the original insertion order of the keys.
+
+    Method	        Description
+    new Map()	    Creates a new Map
+    set()	        Sets the value for a key in a Map
+                        can also alter the value of a key.
+    get()	        Gets the value for a key in a Map
+    delete()	    Removes a Map element specified by the key
+    has()	        Returns true if a key exists in a Map
+    forEach()	    Calls a function for each key/value pair in a Map
+    entries()	    Returns an iterator with the [key, value] pairs in a Map
+
+    Property	    Description
+    size	        Returns the number of elements in a Map
+
+2. Ways to create a map:
+    1) passing an array to "new Map()"
+    2) create a map with "new Map()" and use "Map.set()"
+
+
+
+-->

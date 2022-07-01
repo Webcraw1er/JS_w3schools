@@ -1,0 +1,83 @@
+<!Doctype html>
+<html>
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <script>
+        let crlf= "<br>";
+        
+        var arr1=[1, 2, 3];
+        const set1= new Set(arr1);
+        for( const x of set1){
+            document.write(x, " " );
+        }
+        document.write(crlf, crlf);
+
+        const set2= new Set(["4", "5", "6"]);
+        for( const x of set2){
+            document.write(x, " " );
+        }
+        document.write(crlf, crlf);
+
+        const set3= new Set();
+        set3.add("7");
+        set3.add("8");
+        set3.add("9");
+        set3.add("9");
+        for( const x of set3){
+            document.write(x, " " );
+        }
+        document.write(crlf, crlf);
+
+        /* 3. */
+        const letters= new Set(["a", "b", "c"]);
+        let text="";
+        letters.forEach(function(value){
+            text+= value;
+        });
+        document.write(crlf, "3.", crlf, text, crlf);
+        document.write(crlf, "print letters.values() : ", crlf, letters.values(), crlf);
+
+        let text2= "";
+        for(const x of letters.values()){
+            text2 += x+ " ";  /* or `${x} ` */
+                              /* x, " "; doesn;t work. */
+        }
+        document.write(crlf, "print .values() with \"for of\" : ", crlf, text2, crlf);
+    </script>
+</body>
+</html>
+
+
+<!--
+
+1. set is a collection of unique values. each values can occur only once in a set.
+
+    Method	        Description
+    new Set()	    Creates a new Set
+    add()	        Adds a new element to the Set
+    delete()	    Removes an element from a Set
+    has()	        Returns true if a value exists in the Set
+    forEach()	    Invokes a callback for each element in the Set
+    values()	    Returns an iterator with all the values in a Set
+
+    Property	    Description
+    size	        Returns the number of elements in a Set
+
+2. how to create a set:
+    1) pass an array to "new Set()" constructor.
+    2) create a new set and use "add()" to add values.
+    3) create a new set and use "add()" to add variables.
+
+        when "add()"ing, if there are same elements, only the first element will be saved.
+
+3. .values() 
+    returns a new iterator object containing all the values in a set.
+    you can use the iterator object to access the elements.
+
+-->

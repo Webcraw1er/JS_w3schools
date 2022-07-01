@@ -1,0 +1,129 @@
+<!Doctype html>
+<html>
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <script>
+        let crlf= "<br>";
+        /* 2.1 */
+        const person= {
+            firstname: "John",
+            lastname: "Doe",
+            id: 5566,
+            fullname: function() {
+            return this.firstname + ' ' + this.lastname;
+            }
+        };
+
+        document.write("2.1", crlf, person.fullname(), crlf)
+
+        /*  2.2 */
+        var x= this;
+        document.write(crlf, "2.2", crlf, x, crlf)
+
+        /* 2.3 */
+        function myfunc1(){
+            return this;
+        }
+        document.write(crlf, "2.3", crlf, myfunc1(), crlf)
+
+        /* 2.4 */
+        function myfunc2(){
+            'use strict';
+            return this;
+        }
+        document.write(crlf, "2.4", crlf, myfunc2(), crlf, crlf, "2.5", crlf)
+    </script>
+        <input type="button" value="2.5" onclick="this.style.display='none'">
+    <script>
+        /* 2.6 call() */
+        const person1= {
+            fullName: function(){
+                return this.firstName + " " + this.lastName;
+            }
+        }
+        const person2= {
+            firstName: "Jane",
+            lastName: "doe",
+        }
+
+        document.write(crlf, crlf, person1.fullName.call(person2))
+
+        /* 2.6 bind() */
+        let name1= {
+            firstName: "Justin",
+            lastName: "Kim",
+            printName: function(){
+                return this.firstName+ ' ' + this.lastName;
+            }
+        }
+        let name2= {
+            firstName: "Britney",
+            lastName: "choi",
+        }
+        document.write(crlf, crlf, name1.printName.bind(name2));
+
+    </script>
+
+</body>
+</html>
+
+<!--
+1. example first:
+    const person= {
+            firstname: "John",
+            lastname: "Doe",
+            id: 5566,
+            fullname: function() {
+            return this.firstname + ' ' + this.lastname;
+            }
+        };
+
+        document.write(person.fullname())
+
+
+        document.write(person.fullname()) will print out
+            John Doe
+        document.write(person.fullname) will print out
+            function() { return this.firstname + ' ' + this.lastname; },
+                which is the definition of the function.
+        
+2. the "this" keyword refers to an object.(different object depending on how it is used.
+        1) in an object method, refers to the object.
+        2) ALone, refers to the global object. (in a browser window the global object is [object window])
+        3) in a function, refers to the global object.
+        4) in strict mode, in a function, is undefined.
+        5) In an event, refers to the element that received the event.
+        6) Methods like call(), apply(), and bind() can refer this to any object.
+                    ->  this is called explicit function binding
+            # the call() and bind() functions are predefined JS methods.
+              they can both be used to call an object method with another method as argument.
+
+            the example 
+                2.6 call()
+            above calls person1.fullNamewith person2 as an argument, "this" refers to 
+            person2, even if fulName is a method of person1
+
+            the example
+                2.6 bind()
+            shows how the name2 object borrows the printName method from the name1 object.
+
+        remember that "this" is not a variable, it is a keyword. the value of this can not be changed.
+
+3. "this" keyword precedence
+        1. bind()
+        2. apply() and call()
+        3. object method
+        4. global scope
+
+
+
+
+
+
+-->

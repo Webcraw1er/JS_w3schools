@@ -1,0 +1,66 @@
+<!Doctype html>
+<html>
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <script>
+        let crlf= "<br>";
+        let date1= new Date();
+        let yearNow= date1.getFullYear();
+        class car {
+            constructor(name, year) {
+                this.name = name;
+                this.year = year;
+            }
+            method1() {
+                return this.name + " " + this.year;
+            }
+            howOld(yearNow) {
+                return yearNow- this.year;
+            }
+        }
+
+        let car1= new car("Ford", 1999);
+        let car2= new car("Bentz", 2003);
+        document.write(crlf, car1.name, " ", car1.year, crlf, car2.name, " ", car2.year, crlf);
+        document.write(crlf, "print car1 with a method : ", car1.method1(), crlf, 
+        "the car above is ", car1.howOld(yearNow), " years old.", crlf);
+    </script>
+</body>
+</html>
+
+
+<!--
+1. JS classes are temlpates of objects.
+    * use the keyword "class" to create a class.
+    always add a method named constructor();
+
+    the syntax is as follows:
+        class ClassName {
+            constructor() { ... }
+        }
+
+    ex)
+        class car {
+            constructor(name, year) {
+                this.name = name;
+                this.year = year;
+            }
+        }
+
+        1) the name of the class is "car"
+        2) the two initial properties are "name" and "year".
+        3) JS class is not an object, 
+            but a template for objects.                        
+        4) class constructors should be invoked with "new" keyword.
+            (1) the constructor method should be named exactly as "constructor".
+            (2) is called automatically when a new object is created.\
+            (3) used to initialize object properties.
+            (4) if not defined, JS will add an empty "constructor method"
+
+-->

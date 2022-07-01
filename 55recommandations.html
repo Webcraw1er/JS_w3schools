@@ -1,0 +1,42 @@
+<!Doctype html>
+<html>
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <script>
+        let crlf= "<br>";
+        
+    </script>
+</body>
+</html>
+
+
+<!--
+
+1. always declare arrays with "const".
+    the JS will sometimes change variables or object types automatically.
+    to prevent this, ban the redeclaration with the "const" keyword.
+        ex) var arr= [1, 2, 3, 4, 5];
+            arr= 4;
+        will change the array into a number variable.
+        arr.length() or arr[0] will no longer work. 
+
+2. take look: 
+        for( int i = 0; i < arr.length; i++)
+    this block of code will access the length property every time going through the iteration.
+    HOWEVER
+        let len = arr.length;
+        for( let i = 0; i< len; i++){
+    will only compare(not access) the length as the block runs.
+
+3. reduce DOM access. ( DOM is a standard for how to get, change, and delete HTML elements.)
+        accessing the HTML DOM is very slow, so you can just declare a variable like this:
+            const obj= document.getElementById("test1");
+            obj.innerHTML= "Hello";
+4. dont declare unneccessary variables.
+    just use raw values when you don't need to use it over and over.

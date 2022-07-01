@@ -1,0 +1,57 @@
+<!Doctype html>
+<html>
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <script>
+        let crlf= "<br>";
+        let str1= '{"name": "Justin", "age": 30, "favs":["games", "coding"]}';
+        const obj1= JSON.parse(str1);
+        document.write(obj1.favs[0], crlf, crlf);
+        for(let i in obj1.favs){
+            document.write(obj1.favs[i], crlf);
+        }
+        document.write(crlf, "with an ordinary for loop:", crlf,);
+        for(let i=0; i< obj1.favs.length; i++){
+                document.write(obj1.favs[i], crlf);
+        }
+    </script>
+</body>
+</html>
+
+<!--
+1. in JSON strings, all str types must be surrounded by " ".
+    in both JS and JSON, all keys must be a string, and all values a valid data type.
+                                                                    ex) string
+                                                                        number
+                                                                        object  
+                                                                        array 
+                                                                        boolean
+                                                                        null
+    the only difference is that JS does not put " " for keys; they know that the keys ARE STRINGS anyway.
+    but JSON has a very strict form, all keys must come inside " ".
+
+    these properties of a JSON "string" is called "literals".
+    in programming, a literal is a notation for representing a fixed value in source code.
+
+2. you can access object values with both dot(.) and square brackets ([ ])
+    when using square brackets, you must put " " too.
+
+!!!!!!!!!!!!!!!!!!!!!for in loops through indexes(keys)     !!!!!!!!!!!!!!!
+                        so you need [ ] when accessing with "for in" loop.
+!!!!!!!!!!!!!!!!!!!!!for of loops through values            !!!!!!!!!!!!!!!
+
+3. arrays in JSON uses the same syntax.
+    '["ford", "BMW", "FIAT"]'
+        this is the same with JS literal, ["ford", "BMW", "FIAT"]
+
+    you can put arrays in an object.
+
+
+
+-->

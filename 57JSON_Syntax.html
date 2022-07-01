@@ -1,0 +1,54 @@
+<!Doctype html>
+<html>
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <script>
+        let crlf= "<br>";
+        let JSObject= { name: "justin", age: 24};
+        document.write(JSObject.name, crlf);
+        document.write(JSObject["name"]);
+        
+    </script>
+</body>
+</html>
+
+<!--
+
+1. JSON syntax is a subset of the JS syntax.
+    1) data is in name:value pairs. (key: value pairs)
+    2) data is seperated by commas.
+    3) curly braces hold objects.
+    4) square brackets hold arrays.
+
+2. A name/value pair consists of a field name, followed by a colon, then followed by a value.
+    JSON names require double quotes.
+
+    in JSON:
+        {"name": "John"}
+    in Javascript:
+        {name: "John"}
+
+    in JSON values must be one of these types: 
+        a string
+        a number
+        an object
+        an array
+        a boolean
+        null
+    plus, JS has the following types in addition:
+        a function
+        a date
+        undefined.
+            these are the types of which JSON CAN'T BE.
+            
+
+3. JS arrays can also be written as JSON.
+
+
+-->

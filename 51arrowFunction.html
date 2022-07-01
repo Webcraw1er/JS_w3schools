@@ -1,0 +1,40 @@
+<!Doctype html>
+<html>
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <script>
+        let crlf= "<br>";
+        hello= () => {
+            return "hello world!";
+        }
+        document.write(hello());
+        let val= "Justin";
+        hello2= (name1)=> "hello " + name1+ "!";
+        document.write(crlf, crlf, hello2(val));
+    </script>
+</body>
+</html>
+
+<!--
+1. arrow functions allow us to write shorter function syntax;
+    ex) let myfunc1= (a, b) => a* b;
+    ex) hello= () => {
+            return "hello world!";
+        }
+    
+        this can even be shortened into
+            hello = () => "Hello world!";
+                this happens only when the function has one statement, and the statement
+                returns a value.
+                
+    ex) hello= (val)=> "hello" + val;
+        hello= val => "hello" + val;
+            (can even omit paranthesis if theres only one parameter.
+
+-->

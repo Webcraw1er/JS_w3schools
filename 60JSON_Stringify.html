@@ -1,0 +1,76 @@
+<!Doctype html>
+<html>
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <script>
+        let crlf= "<br>";
+        const obj1= {name: "Justin", age: 24, city: "Seoul"};
+        const str1= JSON.stringify(obj1);
+        document.write(crlf, str1, crlf, crlf);        
+        
+        let obj= JSON.parse(str1);
+        document.write(obj["name"]);
+
+        /*       1. how to stringify a function   */
+        document.write(crlf, crlf,  "-------2--------", crlf, crlf);
+        const obj3= {name: "Jane", age: function() {return 30;}, city: "New york", date: new Date()};
+        const str3= JSON.stringify(obj3);
+        document.write("before:         ", str3); /* only "stringify"ed, not toString()ed*/
+        obj3.age= obj3.age.toString();
+        const str4= JSON.stringify(obj3);
+        document.write(crlf, "after:            ", str4);   /* here it is both stringifyed and the */
+                                                            /* function is toString()ed into a string*/
+
+            /* 2. retrieving data(especially a function */
+        let obj5= JSON.parse(str4); /* str4 is the one with the toString()ed function, str3 is not. */
+        document.write(crlf, crlf, "name should be Jane: ", obj5.name)
+        document.write(crlf, "the content of function \"obj5.age()\" : ", obj5.age);
+        document.write(crlf, "And when function \"obj5.age()\" activates: ",);
+        try{  /*try if the function is retrieved */
+        document.write(obj5.age())
+        }
+        catch{
+            document.write("obj5.age is not a function");
+        }
+
+
+        const obj6= JSON.parse(str4);
+        document.write(crlf, crlf, "name of obj6: ", obj6.name);
+        document.write(crlf, "content of obj6.age: ", obj6.age, crlf, 
+        "the type of obj6.age before eval() is: ", typeof obj6.age);
+        obj6.age= eval("("+ obj6.age+ ")");
+        document.write(crlf, crlf, "the type of obj6.age after eval() is: ", typeof obj6.age, crlf,
+         "When function activates: ", obj6.age())
+    </script>
+</body>
+</html>
+
+<!--
+1. JSON is mainly used to (send data to/recieve data from) the web server. 
+    when sending data to a server, it has to be a string.
+    convert a JS object into a string with 
+        JSON.stringify()
+    then the object will be saved as a string.
+
+    you can also stringify JS arrays too.
+
+2. in JSON, functions are not allowed as object values.
+    The JSON.stringify() function will remove any FUNCTIONS from a JS object, both the key and value.
+
+    so you must first convert a function into a string(even before stringifying it, ) and
+    then convert the object with JSON.stringify().
+
+    stringify will also convert any dates into a string into  "A FULL TEXT"
+                                                            ex) 2022-06-29T06:26:35.563Z
+    however when parsing, and you have a string of an ISO date as a value of key, you can 
+                                         ex) "1999-02-12"
+    new Date() it to retrieve it as a date.( when doing this, you reassign the property of an object)
+        ex) person.birth= new Date(person.birth);
+
+-->

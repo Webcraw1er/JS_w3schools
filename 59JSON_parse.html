@@ -1,0 +1,61 @@
+<!Doctype html>
+<html>
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <script>
+        let crlf= "<br>";
+        /*  1.  */
+        let str1= '{"name" : {"firstName": "John", "lastName": "Choi"}, "address": ["susung", "laneStreet"] }';
+        let obj1= JSON.parse(str1);
+        for(let i in obj1.name){
+            document.write(obj1.name[i], crlf);
+        }
+        document.write(crlf);
+        for(let f of obj1.address){
+            document.write(f, crlf);
+        }
+
+        /*  2-1  */
+        const str2= '{"name": "James", "birth": "1997-04-23", "city": "New York"}';
+        const obj2= JSON.parse(str2);
+        document.write(crlf, crlf, "2.1", crlf, 
+        "before: ", obj2.birth, "and it is a ", typeof obj2.birth, crlf)
+        obj2.birth= new Date(obj2.birth);
+        document.write("after: ", obj2.birth, "and it is a ", typeof obj2.birth, crlf);
+
+        /* 2-2 */
+        const str3= '{"name": "Justin", "birth": "1999-02-12", "city": "yi-cheon"}';
+        const obj3= JSON.parse(str3, function(key, value) {
+            if (key== "birth") {
+                return new Date(value);
+            }
+            else
+                return value;
+        });
+        document.write(crlf, crlf, "2.2", crlf, "the birth of obj3 is: ", obj3.birth, crlf,
+        "the type of obj3.birth is: ", typeof obj3.birth);
+
+
+
+    </script>
+</body>
+</html>
+
+<!--
+
+1. when you receive data from the server, it is always a string. 
+    this is where the JSON is used.
+    Parsing the data with 
+        JSON.parse()
+    makes it a JS object.
+
+2, when parsing dates, you need some more .lines of codes.
+    1) parses the whole string, and then use the key "birth" to reassign the obj2.birth property.
+    2) uses a reviver function, which
+        checks each property, before returning the specified value.

@@ -1,0 +1,53 @@
+
+
+<!Doctype html>
+<html>
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <script>
+        let crlf= "<br>";
+        
+    </script>
+</body>
+</html>
+
+<!--
+!!! remember that
+    var x;      <---- this is the declaration
+    x= 5;       <---- this is the assignment.
+
+1. Hoisting is JS's default behavior of moving all declarations to the top of the current scope/function
+
+    HOWEVER, variables defined with "let" and "const" are hoisted, but not initialized.
+        -> this means that the block of code is aware of the variable, but cannot use until its declared.
+
+ 2. ALSO, JS does not hoist initializations.
+        -> WHAT THIS MEANS IS THAT you can 
+            x= 7;
+            document.write(x);
+            var x;
+
+        BUT YOU CAN'T
+            document.write(x);
+            var x;
+            x=7;
+        or
+            document.write(x);
+            var x=7;
+
+        Do you see the differnece? the first example did work because there was nothing wrong,
+        but the second and third ones initialized the variable later, 
+        which is not relfected when hoisting.
+            to elaborate, in the third one, the JS did know that there is a declared variable "x", 
+            but it is not initialized.
+
+
+
+
+-->
